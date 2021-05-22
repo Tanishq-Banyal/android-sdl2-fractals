@@ -24,8 +24,8 @@ jobs:
           arguments: 'build -x lint'
       
       - name: Tree Diagram of /home
-        - run: sudo apt-get install tree
-        - run: cd /home && tree
+      - run: sudo apt-get install tree
+      - run: cd /home && tree
       
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
