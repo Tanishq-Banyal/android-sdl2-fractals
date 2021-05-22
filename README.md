@@ -1,7 +1,5 @@
 # SDL2 Android Example
 
-Read article at blog: https://georgik.rocks/tag/sdl2/
-
 Source code:
 
  - the code is assembled of several pieces available on GitHub
@@ -10,8 +8,7 @@ Source code:
 
 ### Gradle
 
-The project is based on Gradle 5. For older version based on Gradle 4 and Android Experimental Plugin, check out branch gradle-4-using-android-experimental-plugin.
-
+The project is based on Gradle 5.
 Android build Tools are set to 27.0.3 in file settings.gradle. Make sure to download those tools via Android Studio.
 
 
