@@ -1,6 +1,6 @@
 name: build-sdl2-android
 
-on:
+on: workflow_dispatch
   push:
     tags:
     - v*
