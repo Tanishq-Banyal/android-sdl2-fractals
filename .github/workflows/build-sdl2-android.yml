@@ -14,23 +14,20 @@ jobs:
           distribution: adopt-hotspot
           java-version: 11
       
-#      - name: Building with Gradle
-#        uses: eskatos/gradle-command-action@v1.3.3
-#        with:
-#          gradle-version: 5.6.4
-#          wrapper-cache-enabled: true
-#          dependencies-cache-enabled: true
-#          configuration-cache-enabled: true
-#          arguments: 'build -x lint'
-      
-      - name: Tree Diagram of /home
-        run: sudo apt-get install coreutils && pwd
+      - name: Building with Gradle
+        uses: eskatos/gradle-command-action@v1.3.3
+        with:
+          gradle-version: 5.6.4
+          wrapper-cache-enabled: true
+          dependencies-cache-enabled: true
+          configuration-cache-enabled: true
+          arguments: 'build -x lint'
       
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/android-sdl2-fractals/android-sdl2-fractals/app/build/outputs/apk/release/app-release-unsigned.apk
+          file: ./app/build/outputs/apk/release/app-release-unsigned.apk
           asset_name: mything
           tag: ${{ github.ref }}
           overwrite: true
