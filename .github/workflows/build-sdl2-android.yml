@@ -33,15 +33,6 @@ jobs:
             APK needs to be signed with test key before installing.
             This may change in Future.
           files: |
-            ./app/build/outputs/apk/arm/debug/app-arm-debug.apk
-            ./app/build/outputs/apk/arm/release/app-arm-release-unsigned.apk
-            ./app/build/outputs/apk/arm64/debug/app-arm64-debug.apk
-            ./app/build/outputs/apk/arm64/release/app-arm64-release-unsigned.apk
-            ./app/build/outputs/apk/x86/debug/app-x86-debug.apk
-            ./app/build/outputs/apk/x86/release/app-x86-release-unsigned.apk
-            ./app/build/outputs/apk/x86_64/debug/app-x86_64-debug.apk
-            ./app/build/outputs/apk/x86_64/release/app-x86_64-release-unsigned.apk
-            ./app/build/outputs/apk/all_in_one/debug/app-all_in_one-debug.apk
-            ./app/build/outputs/apk/all_in_one/release/app-all_in_one-release-unsigned.apk
+            ./app/build/outputs/apk/*/*/*.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
