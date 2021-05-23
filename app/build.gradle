@@ -25,7 +25,7 @@ apply plugin: 'kotlin-android-extensions'
         compileSdkVersion = gradle.sdkVersion
 
         defaultConfig {
-            applicationId = 'rocks.georgik.sdlapp'
+            applicationId = 'android.sdl2.fractals'
             minSdkVersion gradle.minSdkVersion
             targetSdkVersion gradle.targetSdkVersion
         }
@@ -42,12 +42,39 @@ apply plugin: 'kotlin-android-extensions'
                     }   
                 }   
             }
-        }   */
+        }*/
+        productFlavors {
+            //Specifies the dimension you want to use
+            flavorDimensions 'abi'
+            arm {
+                //Assigns this product dimension to the "abi" flavorDimensions
+                ndk {
+                    abiFilter 'armeabi-v7a'
+                }
+            }
+            arm64 {
+                ndk {
+                    abiFilter 'arm64-v8a'
+                }
+            }
+        }
+        signingConfigs {
+            release {
+                storeFile file("frak_key.jks")
+                storePassword "ilovefractals"
+                keyAlias "frak"
+                keyPassword "frakyou"
 
+                // Optional, specify signing versions used
+                v1SigningEnabled true
+                v2SigningEnabled true
+            }
+        }
         buildTypes {
             release {
-                minifyEnabled = false
+                minifyEnabled = true
                 proguardFiles.add(file('proguard-rules.txt'))
+                signingConfig signingConfigs.release
             }
         }
         externalNativeBuild {
