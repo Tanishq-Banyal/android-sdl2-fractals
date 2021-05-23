@@ -132,7 +132,7 @@ void sdl_draw_mandelbrot(SDL_Window* window, SDL_Surface* surface, int CenterX, 
 	}
 }
 
-int SDL_Main()
+int SDL_main()
 {
 	#ifdef _unix_
 	freopen("output.txt", "w", stderr);
