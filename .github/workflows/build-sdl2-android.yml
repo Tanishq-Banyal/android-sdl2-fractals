@@ -24,7 +24,7 @@ jobs:
           arguments: 'build -x lint'
       
       - name: Upload binaries to release
-        run: cd ./app/build/outputs/apk/release && ls -a
+        run: cd ./app/build/outputs/ && ls -R
 #        uses: svenstaro/upload-release-action@v2
 #        with:
 #          repo_token: ${{ secrets.GITHUB_TOKEN }}
