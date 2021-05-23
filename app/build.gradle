@@ -44,10 +44,9 @@ apply plugin: 'kotlin-android-extensions'
             }
         }*/
         productFlavors {
-            //Specifies the dimension you want to use
             flavorDimensions 'abi'
+            
             arm {
-                //Assigns this product dimension to the "abi" flavorDimensions
                 ndk {
                     abiFilter 'armeabi-v7a'
                 }
@@ -55,6 +54,21 @@ apply plugin: 'kotlin-android-extensions'
             arm64 {
                 ndk {
                     abiFilter 'arm64-v8a'
+                }
+            }
+            x86 {
+                ndk {
+                    abiFilter 'x86'
+                }
+            }
+            x86_64 {
+                ndk {
+                    abiFilter 'x86_64'
+                }
+            }
+            all_in_one {
+                ndk {
+                    abiFilter 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
                 }
             }
         }
