@@ -25,8 +25,9 @@ jobs:
       
       - name: Upload APK Files to Release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
+          tag_name: v1.0.0
+          target_commitish: master
           prerelease: true
           body: |
             This is an Automatic Release by GitHub Actions.
