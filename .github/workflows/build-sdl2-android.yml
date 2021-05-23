@@ -8,6 +8,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2.3.4
       
+      - name: Updating Build Tools
+        run: sudo apt update && sudo apt upgrade
+      
       - name: Setup Java Envirionment
         uses: actions/setup-java@v2.1.0
         with:
@@ -26,7 +29,7 @@ jobs:
       - name: Upload APK Files to Release
         uses: softprops/action-gh-release@v1
         with:
-          name: Switched to ISO C++20
+          name: Switched to ISO C++17
           tag_name: v1.0.*
           prerelease: true
           body: |
