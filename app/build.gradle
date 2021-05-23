@@ -68,7 +68,7 @@ apply plugin: 'kotlin-android-extensions'
             }
             all_in_one {
                 ndk {
-                    abiFilter 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+                    //abiFilter 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
                 }
             }
         }
