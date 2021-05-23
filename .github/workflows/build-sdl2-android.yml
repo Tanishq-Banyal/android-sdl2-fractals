@@ -25,6 +25,7 @@ jobs:
       
       - name: Upload APK Files to Release
         uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             ./app/build/outputs/apk/arm/debug/app-arm-debug.apk
@@ -39,4 +40,4 @@ jobs:
             ./app/build/outputs/apk/all_in_one/release/app-all_in_one-release-unsigned.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          body: "This is an Automatic Release by GitHub Actions. APK needs to be signed with test key before installing. This will change in Future."
+#          body: "This is an Automatic Release by GitHub Actions. APKs marked "unsigned" needs to be signed with test key before installing. This may change in Future."
