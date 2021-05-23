@@ -60,10 +60,10 @@ apply plugin: 'kotlin-android-extensions'
         }
         signingConfigs {
             release {
-                storeFile file("frak_key.jks")
-                storePassword "ilovefractals"
-                keyAlias "frak"
-                keyPassword "frakyou"
+                storeFile file("keystore-path")
+                storePassword "keystore-pass"
+                keyAlias "alias"
+                keyPassword "alias-password"
 
                 // Optional, specify signing versions used
                 v1SigningEnabled true
@@ -74,7 +74,7 @@ apply plugin: 'kotlin-android-extensions'
             release {
                 minifyEnabled = true
                 proguardFiles.add(file('proguard-rules.txt'))
-                signingConfig signingConfigs.release
+                //signingConfig signingConfigs.release
             }
         }
         externalNativeBuild {
