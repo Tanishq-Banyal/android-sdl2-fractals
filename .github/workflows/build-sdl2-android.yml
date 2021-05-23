@@ -27,11 +27,10 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v1.0.0
-          target_commitish: master
           prerelease: true
           body: |
             This is an Automatic Release by GitHub Actions.
-            APK needs to be signed with test key before installing.
+            APK marked "unsigned" needs to be signed with test key before installing.
             This may change in Future.
           files: |
             ./app/build/outputs/apk/*/*/*.apk
