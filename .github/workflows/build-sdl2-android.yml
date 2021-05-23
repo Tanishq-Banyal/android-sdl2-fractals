@@ -23,13 +23,20 @@ jobs:
           configuration-cache-enabled: true
           arguments: 'build -x lint'
       
-      - name: Upload binaries to release
-        run: cd ./app/build/outputs/ && ls -R
-#        uses: svenstaro/upload-release-action@v2
-#        with:
-#          repo_token: ${{ secrets.GITHUB_TOKEN }}
-#          file: ./app/build/outputs/apk/release/app-release-unsigned.apk
-#          asset_name: unsigned-sdl2-fractals.apk
-#          tag: ${{ github.ref }}
-#          overwrite: true
+      - name: Upload APK Files to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ./app/build/outputs/apk/arm/debug/app-arm-debug.apk
+            ./app/build/outputs/apk/arm/release/app-arm-release-unsigned.apk
+            ./app/build/outputs/apk/arm64/debug/app-arm64-debug.apk
+            ./app/build/outputs/apk/arm64/release/app-arm64-release-unsigned.apk
+            ./app/build/outputs/apk/x86/debug/app-x86-debug.apk
+            ./app/build/outputs/apk/x86/release/app-x86-release-unsigned.apk
+            ./app/build/outputs/apk/x86_64/debug/app-x86_64-debug.apk
+            ./app/build/outputs/apk/x86_64/release/app-x86_64-release-unsigned.apk
+            ./app/build/outputs/apk/all_in_one/debug/app-all_in_one-debug.apk
+            ./app/build/outputs/apk/all_in_one/release/app-all_in_one-release-unsigned.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #          body: "This is an Automatic Release by GitHub Actions. APK needs to be signed with test key before installing. This will change in Future."
