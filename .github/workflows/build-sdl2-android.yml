@@ -30,7 +30,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           name: Switched to ISO C++17
-          tag_name: v1.0.*
+          tag_name: v1.0.2
           prerelease: true
           body: |
             This is an Automatic Release by GitHub Actions.
