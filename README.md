@@ -1,4 +1,4 @@
-# SDL2 Android Example
+# Android SDL2 Fractals
 
 Source code:
 
@@ -8,8 +8,8 @@ Source code:
 
 ### Gradle
 
-The project is based on Gradle 5.
-Android build Tools are set to 27.0.3 in file settings.gradle. Make sure to download those tools via Android Studio.
+The project is compatible with Gradle 5 and 6.
+Android build Tools are set to 28.0.0 in file settings.gradle. Make sure to download those tools via Android Studio.
 
 
 ### Libraries
